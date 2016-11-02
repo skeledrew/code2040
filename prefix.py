@@ -11,6 +11,6 @@ for string in dic['array']:
     if not string[:len(dic['prefix'])] == dic['prefix']:
         lst.append(string)
 
-result = json.dumps({'token': verify['token']})
+result = json.dumps({'token': verify['token'], 'array': lst})
 print(result)
 print('Result: ' + requests.post('http://challenge.code2040.org/api/prefix/validate', data=result, headers={'content-type': 'application/json'}).text)
